@@ -1,0 +1,30 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option packet_steering '1'
+
+config interface 'lan'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option delegate '0'
+	option _orig_ifname 'eth0'
+	option _orig_bridge 'true'
+	option ipaddr '10.10.10.254'
+	option ifname 'eth0'
+
+config interface 'wan'
+	option _orig_ifname 'eth1'
+	option _orig_bridge 'false'
+	option proto 'pppoe'
+	option username 'ad77054513'
+	option password '98523199'
+	option keepalive '0'
+	option ifname 'eth1'
+	option delegate '0'
+	option ipv6 '0'
+
